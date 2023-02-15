@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/requirejs/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl:'./js',
+            paths:{
+                jquery:'../bower_components/jquery/dist/jquery.js',
+                materialize:'../bower_components/materialize/dist/js/materialize.js',
+                backbone:'../bower_components/backbone/backbone.js',
+                chaplin:'../bower_components/chaplin/chaplin.js',
+                underscore:'../bower_components/underscore/underscore.js'
+            },
+            shim:{
+                underscore: {
+                    exports:'_'
+                },
+                backbone:{
+                    deps:['underscore','jquery'],
+                    exports: 'Backbone'
+                }
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

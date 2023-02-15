@@ -1,0 +1,23 @@
+{
+  "name": "tasktime.io",
+  "authors": [
+    "Basseydou Ouattara <bassouat8@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.6",
+    "chaplin": "^1.2.0",
+    "jquery": "^3.6.3",
+    "materialize": "^1.0.0"
+  }
+}
