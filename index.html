@@ -8,11 +8,12 @@
         requirejs.config({
             baseUrl:'./js',
             paths:{
-                jquery:'../bower_components/jquery/dist/jquery.js',
-                materialize:'../bower_components/materialize/dist/js/materialize.js',
-                backbone:'../bower_components/backbone/backbone.js',
-                chaplin:'../bower_components/chaplin/chaplin.js',
-                underscore:'../bower_components/underscore/underscore.js'
+                jquery:'../bower_components/jquery/dist/jquery',
+                materialize:'../bower_components/materialize/dist/js/materialize',
+                backbone:'../bower_components/backbone/backbone',
+                handlebars:'../bower_components/handlebars/handlebars',
+                chaplin:'../bower_components/chaplin/chaplin',
+                underscore:'../bower_components/underscore/underscore'
             },
             shim:{
                 underscore: {
@@ -21,9 +22,17 @@
                 backbone:{
                     deps:['underscore','jquery'],
                     exports: 'Backbone'
+                },
+                handlebars: {
+                    exports:'Handlebars'
                 }
             }
+            ,urlArgs:'bust='+ (new Date()).getTime()
         });
+
+        require(['application','routes'],function (Application,Routes){
+                new Application({routes:Routes,controllerSuffix:'-controller' })
+        })
     </script>
 
 </head>
